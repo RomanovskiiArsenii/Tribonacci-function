@@ -13,7 +13,7 @@
         if (signature.Length < 3) throw new ArgumentOutOfRangeException("First sequence must contain minimum 3 elements");
         else if (n <= 3) throw new ArgumentOutOfRangeException("Sequence length must be greater than 3");
         else if (signature.Any(num => num < 0)) throw new ArgumentOutOfRangeException("Numbers in sequence must be greater or equal to zero");
-        else if (signature.Sum() == 0) { Console.WriteLine("All numbers in sequence are zeroes"); return new double[0]; }
+        else if (signature.All(num => num == 0)) { Console.WriteLine("All numbers in sequence are zeroes"); return new double[0]; }
 
         double[] result = new double[n];
         for (int i = 0; i < n; i++)
